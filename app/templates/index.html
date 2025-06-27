@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kubernetes Quote of the Day</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light text-center py-5">
+  <div class="container">
+    <h1 class="display-4 mb-4">📦 Kubernetes Quote of the Day</h1>
+    <p class="lead">Click to receive DevOps wisdom from the cloud gods.</p>
+    <button id="quoteBtn" class="btn btn-primary btn-lg mb-3">Get My Quote</button>
+    <p id="result" class="fs-4 text-secondary mt-4"></p>
+    <p class="text-muted mt-5">
+      <a href="/api/status" target="_blank">Check app status</a> |
+      <a href="/api/stress" target="_blank">Trigger stress test</a>
+    </p>
+  </div>
+  <script>
+    document.getElementById('quoteBtn').addEventListener('click', async () => {
+      const res = await fetch('/api/quote');
+      const data = await res.json();
+      document.getElementById('result').textContent = `"${data.quote}"`;
+    });
+  </script>
+</body>
+</html>
+
