@@ -1,7 +1,7 @@
 ## Prerequisites
 
-A DigitalOcean account with payment set up
-Command Line access with the following installed: kubectl, doctl, git
+- A DigitalOcean account with payment set up
+- Command Line access with the following installed: kubectl, doctl, git
 
 
 ## Cluster Setup
